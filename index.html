@@ -8,24 +8,29 @@
 
 <body>
     <h1>Android Quiz</h1>
-    <button>Start</button>
-    <form>
-        <h4>Question number out of Total Questions</h4>
-        <h2>Question goes here</h2>
-        <input type="radio" name="choices" value="1">Option 1<br>
-        <input type="radio" name="choices" value="2">Option 2<br>
-        <input type="radio" name="choices" value="3">Option 3<br>
-        <input type="radio" name="choices" value="4">Option 4<br>
-        <input type="submit">
-        <h4>Correct Answer, Wrong Answers</h4>
+    <button class="js-start" onClick="startQuiz();">Start</button>
+    <form class="js-quiz hidden" onSubmit=" event.preventDefault(); submitAnswer();">
+        <h4 class="js-progress"></h4>
+        <h2 class="js-question"></h2>
+        <input id="option-1" type="radio" name="choices" value="1">
+        <label for="option-1"></label><br>
+        <input id="option-2" type="radio" name="choices" value="2">
+        <label for="option-2"></label><br>
+        <input id="option-3" type="radio" name="choices" value="3">
+        <label for="option-3"></label><br>
+        <input id="option-4" type="radio" name="choices" value="4">
+        <label for="option-4"></label><br>
+        <input class="js-submit-answer" type="submit">
+        <h4 class="js-report"></h4>
     </form>
-    <div>
-        <h3>Status</h3>
-        <button>Okay</button>
+    <div class="js-result hidden">
+        <h3 class="js-status"></h3>
+        <button class="js-proceed" onClick="nextQuestion();">Proceed</button>
+        <button class="js-restart hidden" onClick="location.reload();">Restart</button>
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
-    <script stc="app.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript"></script>
 </body>
 
 </html>
